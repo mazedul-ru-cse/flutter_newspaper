@@ -16,7 +16,18 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
+
+  #GetX for statement management
   get: ^4.6.5
+
+  #Firebase
+  firebase_core: ^2.13.0
+
+  #Firebase Authentication
+  firebase_auth: ^4.6.1
+
+  #Progress Indicator
+  simple_fontellico_progress_dialog: ^0.3.0
 
 dev_dependencies:
   flutter_test:

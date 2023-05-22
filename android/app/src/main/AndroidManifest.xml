@@ -1,4 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.flutter_newspaper">
+
     <application
         android:label="flutter_newspaper"
         android:name="${applicationName}"
@@ -30,4 +32,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+
+
 </manifest>

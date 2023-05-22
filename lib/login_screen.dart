@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -127,9 +128,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
       child: TextFormField(
         keyboardType: TextInputType.text,
-        obscureText: true,
+        obscureText: false,
         controller: emailController,
-
         validator: (value) {
           if (value == null || value.isEmpty) {
             return 'Email is required.';
@@ -194,10 +194,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void loginButton(){
 
-    String email,password;
 
     if(emailFieldKey.currentState!.validate() && passwordFieldKey.currentState!.validate()){
-      print("Login");
+
+
+      FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text,
+          password: passwordController.text
+      ).then((value) => print("Login successful")
+      ).onError((error, stackTrace) => print("Login failed"));
+
     }
 
   }
