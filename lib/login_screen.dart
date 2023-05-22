@@ -8,6 +8,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+
+  //Text edit field key
+  final emailFieldKey = GlobalKey<FormState>();
+  final passwordFieldKey = GlobalKey<FormState>();
+
+  //Text editing controller
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,33 +43,20 @@ class _LoginScreenState extends State<LoginScreen> {
                   left: 35,
                   top: MediaQuery.of(context).size.height * 0.5),
               child: Column(children: [
-                TextField(
-                  decoration: InputDecoration(
-                    fillColor: Colors.grey.shade100,
-                    filled: true,
-                    hintText: 'Email',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
+
+                getEmailField(),
+
                 const SizedBox(
                   height: 30,
                 ),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    fillColor: Colors.grey.shade100,
-                    filled: true,
-                    hintText: 'Password',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
+
+                getPasswordField(),
+
                 const SizedBox(
                   height: 40,
                 ),
+
+                //Login button
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -75,22 +73,23 @@ class _LoginScreenState extends State<LoginScreen> {
                       backgroundColor: const Color(0xff4c505b),
                       child: IconButton(
                         color: Colors.white,
-                        onPressed: () {},
+                        onPressed: ()=> loginButton(),
                         icon: const Icon(Icons.arrow_forward),
                       ),
                     ),
                   ],
                 ),
+
                 const SizedBox(
                   height: 40,
                 ),
+
+                //SignUp button
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'register');
-                        },
+                        onPressed: ()=> Navigator.pushNamed(context, 'register'),
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(
@@ -118,6 +117,89 @@ class _LoginScreenState extends State<LoginScreen> {
         ]),
       ),
     );
+  }
+
+  Widget getEmailField(){
+
+    return Form(
+
+      key: emailFieldKey,
+
+      child: TextFormField(
+        keyboardType: TextInputType.text,
+        obscureText: true,
+        controller: emailController,
+
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Email is required.';
+          }
+          return null;
+        },
+
+        decoration: InputDecoration(
+            fillColor: Colors.grey.shade100,
+            filled: true,
+            prefixIcon: Icon(
+                Icons.email,
+                color: Colors.black26
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+
+            labelText: 'Email'),
+
+
+      ),
+    );
+  }
+
+  Widget getPasswordField(){
+
+    return Form(
+
+      key: passwordFieldKey,
+
+      child: TextFormField(
+        keyboardType: TextInputType.text,
+        obscureText: true,
+        controller: passwordController,
+
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Password is required.';
+          }
+          return null;
+        },
+
+        decoration: InputDecoration(
+            fillColor: Colors.grey.shade100,
+            filled: true,
+            prefixIcon: const Icon(
+                Icons.lock_open,
+                color: Colors.black26
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+
+            labelText: 'Password'),
+
+
+      ),
+    );
+  }
+
+
+  void loginButton(){
+
+    String email,password;
+
+    if(emailFieldKey.currentState!.validate() && passwordFieldKey.currentState!.validate()){
+      print("Login");
+    }
+
   }
 }
 
