@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_newspaper/controller/news_controller.dart';
 import 'package:flutter_newspaper/widget/widget_components.dart';
+import 'package:get/get.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -70,7 +72,33 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
 
+          Expanded(
 
+              child: GetBuilder<NewsController>(
+                init: NewsController(),
+                builder: (newsController){
+
+                  if(!newsController.isLoading){
+                    return Center(child: CircularProgressIndicator());
+                  }
+
+                  return ListView.builder(
+                    itemCount: newsController.news.length,
+                    itemBuilder: (context,index){
+
+                      return Card(
+                        child: ListTile(
+                          leading: Image.network(newsController.news[index].urlToImage.toString()),
+                          title: Text(newsController.news[index].title.toString()),
+                          subtitle: Text(newsController.news[index].publishedAt.toString()),
+                        ),
+                      );
+                    },
+
+                  );
+                }
+              )
+          ),
 
         ],
 
