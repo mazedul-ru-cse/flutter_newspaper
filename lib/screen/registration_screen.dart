@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_newspaper/progress/progress_indicator.dart';
@@ -228,7 +230,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       CustomProgressIndicator progressIndicator = CustomProgressIndicator(context);
 
       //Show progress bar
-      progressIndicator.showDialog("Please wait", SimpleFontelicoProgressDialogType.spinner);
+      progressIndicator.showDialog("Please wait", SimpleFontelicoProgressDialogType.threelines);
 
       FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text,
@@ -239,14 +241,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         //Hide progressbar
         progressIndicator.hideDialog();
 
+        log("<--- Account registration : $value");
+
+
         //Redirect to login screen
-        Navigator.pushReplacementNamed(context, "login");
+        Navigator.pushNamed(context, "login");
       }
 
       ).onError((error, stackTrace) {
 
         //Hide progressbar
         progressIndicator.hideDialog();
+
+        log("<--- Account registration : $error");
 
       });
     }

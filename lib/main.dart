@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_newspaper/login_screen.dart';
-import 'package:flutter_newspaper/registration_screen.dart';
+import 'package:flutter_newspaper/screen/dashboard.dart';
+import 'package:flutter_newspaper/screen/login_screen.dart';
+import 'package:flutter_newspaper/screen/registration_screen.dart';
 
 Future<void> main() async {
 
@@ -15,6 +16,7 @@ Future<void> main() async {
         routes: {
           'login': (context) => const LoginScreen(),
           'register': (context) => const RegistrationScreen(),
+          'dashboard': (context) => const Dashboard(),
         }),
   );
 }

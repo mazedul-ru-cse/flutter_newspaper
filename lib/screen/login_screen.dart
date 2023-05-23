@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_newspaper/progress/progress_indicator.dart';
+import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -198,11 +202,32 @@ class _LoginScreenState extends State<LoginScreen> {
     if(emailFieldKey.currentState!.validate() && passwordFieldKey.currentState!.validate()){
 
 
+      CustomProgressIndicator progressIndicator = CustomProgressIndicator(context);
+
+      //Show login progressbar
+      progressIndicator.showDialog("Login", SimpleFontelicoProgressDialogType.threelines);
+
+      //Login credential
       FirebaseAuth.instance.signInWithEmailAndPassword(
+
           email: emailController.text,
           password: passwordController.text
-      ).then((value) => print("Login successful")
-      ).onError((error, stackTrace) => print("Login failed"));
+
+      ).then((value){
+
+        //Hide login progressbar
+        progressIndicator.hideDialog();
+        log("<--- Login : $value");
+
+        Navigator.pushReplacementNamed(context, "dashboard");
+      }
+
+      ).onError((error, stackTrace) {
+
+        //Hide login progressbar
+        progressIndicator.hideDialog();
+        log("<--- Login failed : $error");
+      });
 
     }
 

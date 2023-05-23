@@ -29,6 +29,12 @@ dependencies:
   #Progress Indicator
   simple_fontellico_progress_dialog: ^0.3.0
 
+  #For datetime format
+  intl: ^0.18.1
+
+  #For google font
+  google_fonts: ^4.0.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
