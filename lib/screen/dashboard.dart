@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_newspaper/controller/news_controller.dart';
 import 'package:flutter_newspaper/widget/widget_components.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -18,13 +19,7 @@ class _DashboardState extends State<Dashboard> {
   //Instance of WidgetComponents
   late WidgetComponents components;
 
-
-  @override
-  void initState() {
-
-    //Initialize
-    super.initState();
-  }
+  NewsController controller = Get.put(NewsController());
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +40,9 @@ class _DashboardState extends State<Dashboard> {
     components = WidgetComponents();
 
     return Card(
-      margin: const EdgeInsets.only(top: 0,left: 5,right: 5),
+
+      margin: const EdgeInsets.only(top: 0,left: 8,right: 8),
+
       color: const Color(0xfff1f5fe),
       elevation: 2,
 
@@ -53,7 +50,7 @@ class _DashboardState extends State<Dashboard> {
 
         children: [
 
-          //News title and searchbar
+          //Newspaper Name and searchbar
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -72,6 +69,14 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
 
+
+          //News category search
+          components.getNewsCategory(context,controller),
+
+          const SizedBox(height: 10),
+
+
+          // News title list
           Expanded(
 
               child: GetBuilder<NewsController>(
@@ -79,7 +84,7 @@ class _DashboardState extends State<Dashboard> {
                 builder: (newsController){
 
                   if(!newsController.isLoading){
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
 
                   return ListView.builder(
@@ -87,10 +92,25 @@ class _DashboardState extends State<Dashboard> {
                     itemBuilder: (context,index){
 
                       return Card(
+                        margin: const EdgeInsets.only(top: 2),
+                        elevation: 0,
                         child: ListTile(
-                          leading: Image.network(newsController.news[index].urlToImage.toString()),
-                          title: Text(newsController.news[index].title.toString()),
-                          subtitle: Text(newsController.news[index].publishedAt.toString()),
+                          leading: SizedBox(
+                            width: 90,
+                            child: Card(
+
+                              elevation: 2,
+                                child: newsController.news[index].urlToImage == null ?Image.asset("assets/images/image_not_found.png"):Image.network(newsController.news[index].urlToImage.toString(),fit: BoxFit.fill,)),
+                          ),
+                          title: Text(newsController.news[index].title.toString(),style: GoogleFonts.acme(fontSize: 15)),
+                          subtitle: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(newsController.news[index].author.toString(),style: GoogleFonts.abel(fontSize: 10)),
+                              Text(newsController.news[index].publishedAt.toString(),style: GoogleFonts.abel(fontSize: 10)),
+                            ],
+                          ),
                         ),
                       );
                     },
@@ -99,6 +119,9 @@ class _DashboardState extends State<Dashboard> {
                 }
               )
           ),
+
+          //Show news title list
+          const SizedBox(height: 10),
 
         ],
 

@@ -22,7 +22,16 @@ class NewsController extends GetxController{
     isLoading = false;
     news = await ApiService().fetch("keyword");
     isLoading = true;
+    update();
 
+  }
+
+  Future<void> newsCategory(String category) async {
+
+    isLoading = false;
+    news = await ApiService().fetch(category);
+    isLoading = true;
+    update();
   }
 
 }
