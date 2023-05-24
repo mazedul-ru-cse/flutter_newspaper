@@ -35,6 +35,10 @@ dependencies:
   #For google font
   google_fonts: ^4.0.4
 
+  #For web view
+  webview_flutter: ^4.2.1
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

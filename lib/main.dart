@@ -17,6 +17,7 @@ Future<void> main() async {
           'login': (context) => const LoginScreen(),
           'register': (context) => const RegistrationScreen(),
           'dashboard': (context) => const Dashboard(),
+
         }),
   );
 }
