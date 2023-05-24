@@ -1,9 +1,12 @@
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_newspaper/progress/progress_indicator.dart';
 import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
+
+import '../database/database_handler.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -238,14 +241,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
       ).then((value) {
 
+        Navigator.pushReplacementNamed(context, "dashboard");
+
+        //Store user name
+        DatabaseHandler().storeUserName(nameController.text);
+        //Redirect to login screen
         //Hide progressbar
         progressIndicator.hideDialog();
 
         log("<--- Account registration : $value");
-
-
-        //Redirect to login screen
-        Navigator.pushNamed(context, "login");
       }
 
       ).onError((error, stackTrace) {

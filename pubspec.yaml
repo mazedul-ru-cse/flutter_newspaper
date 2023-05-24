@@ -38,6 +38,9 @@ dependencies:
   #For web view
   webview_flutter: ^4.2.1
 
+  #For realtime database
+  firebase_database: ^10.2.1
+
 
 dev_dependencies:
   flutter_test:

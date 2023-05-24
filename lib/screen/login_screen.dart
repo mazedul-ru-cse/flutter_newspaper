@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_newspaper/data/constant_data.dart';
 import 'package:flutter_newspaper/progress/progress_indicator.dart';
 import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 
@@ -25,7 +27,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    // if(FirebaseAuth.instance.currentUser?.uid != null){
+    //   Navigator.pushReplacementNamed(context, "dashboard");
+    // }
+
+  }
+
+  @override
   Widget build(BuildContext context) {
+
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -122,6 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ]),
       ),
     );
+
   }
 
   Widget getEmailField(){
@@ -218,6 +233,10 @@ class _LoginScreenState extends State<LoginScreen> {
         //Hide login progressbar
         progressIndicator.hideDialog();
         log("<--- Login : $value");
+
+        print(value.user?.uid.toString());
+
+        token = value.user?.uid.toString();
 
         Navigator.pushReplacementNamed(context, "dashboard");
       }

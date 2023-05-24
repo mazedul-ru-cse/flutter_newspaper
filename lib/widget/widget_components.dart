@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_newspaper/api/api_service.dart';
-import 'package:flutter_newspaper/controller/news_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+
+import '../data/constant_data.dart';
 
 class WidgetComponents {
 
@@ -31,12 +30,9 @@ class WidgetComponents {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         IconButton(onPressed: (){}, icon: Icon(Icons.search)),
-        IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
+        IconButton(onPressed: ()=>drawerKey.currentState?.openEndDrawer(), icon: Icon(Icons.settings)),
       ],
     );
   }
-
-
-
 
 }

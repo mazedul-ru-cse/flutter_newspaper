@@ -1,11 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_newspaper/controller/news_controller.dart';
+import 'package:flutter_newspaper/database/database_handler.dart';
 import 'package:flutter_newspaper/screen/news_presenter.dart';
+import 'package:flutter_newspaper/widget/settings.dart';
 import 'package:flutter_newspaper/widget/widget_components.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../data/constant_data.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -24,20 +27,21 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   void initState() {
-
-    setCategoryButtonIndicator("all");
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+
     return WillPopScope(
 
       onWillPop:onBackPressed,
       child: Scaffold(
+        key: drawerKey,
         body: SafeArea(
             child: getBody()
         ),
+        endDrawer: const Setting(),
       )
     );
   }
@@ -100,7 +104,11 @@ class _DashboardState extends State<Dashboard> {
                     itemBuilder: (context,index){
 
                       return GestureDetector(
-                        onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>NewsPresenter(newsUrl: newsController.news[index].url.toString(),newsTitle: newsController.news[index].title.toString()))),
+                        onTap: (){
+
+                          //Navigator.push(context, MaterialPageRoute(builder: (context)=>NewsPresenter(newsUrl: newsController.news[index].url.toString())));
+                          DatabaseHandler().addBookmark(newsController.news[index]);
+                          },
                         child: Card(
                           margin: const EdgeInsets.only(top: 2),
                           elevation: 0,
@@ -401,7 +409,7 @@ class _DashboardState extends State<Dashboard> {
   }
 
 
-  bool all = false;
+  bool all = true;
   bool business = false;
   bool national = false;
   bool entertainment = false;

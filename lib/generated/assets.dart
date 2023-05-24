@@ -5,5 +5,6 @@ class Assets {
   static const String imagesImageNotFound = 'assets/images/image_not_found.png';
   static const String imagesLogin = 'assets/images/login.png';
   static const String imagesRegister = 'assets/images/register.png';
+  static const String imagesUser = 'assets/images/user.png';
 
 }
