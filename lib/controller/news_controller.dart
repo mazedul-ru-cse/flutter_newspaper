@@ -1,9 +1,8 @@
 import 'package:flutter_newspaper/api/api_service.dart';
 import 'package:get/get.dart';
-
 import '../model/data_model.dart';
 
-class NewsController extends GetxController{
+class NewsController extends GetxController {
 
   //News list
   List<DataModel> news = <DataModel>[];
@@ -12,26 +11,26 @@ class NewsController extends GetxController{
 
   @override
   void onInit() {
-
     initialize();
     super.onInit();
   }
 
-  void initialize() async{
+  void initialize() async {
 
     isLoading = false;
     news = await ApiService().fetch("keyword");
     isLoading = true;
     update();
-
   }
 
-  Future<void> newsCategory(String category) async {
+  Future<void> newsCategory(String searchCategory) async {
 
     isLoading = false;
-    news = await ApiService().fetch(category);
+    update();
+
+    news = await ApiService().fetch(searchCategory);
     isLoading = true;
     update();
   }
-
 }
+

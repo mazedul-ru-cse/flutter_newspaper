@@ -5,7 +5,7 @@ import 'package:flutter_newspaper/controller/news_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
-class WidgetComponents{
+class WidgetComponents {
 
 
   Widget getNewsNameAndDate(){
@@ -36,7 +36,6 @@ class WidgetComponents{
     );
   }
 
-
   Widget getNewsCategory(BuildContext context,NewsController controller){
 
     return SizedBox(
@@ -53,7 +52,7 @@ class WidgetComponents{
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Color(0xff1e88e5)
+                color:  Color(0xff1e88e5)
               ),
               child: Center(child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -238,6 +237,7 @@ class WidgetComponents{
       ),
     );
   }
+
 
 
 }
