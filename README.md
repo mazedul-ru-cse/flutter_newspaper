@@ -16,21 +16,21 @@ It is a online based News Portal Mobile Application
   <img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Login%20Screen.jpg" width="250" height="450" name="Login Screen">
 
 ## SignUp Screen
-<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/SigUp%20Screen.jpg" width="250" height="250" name="SignUp Screen">
+<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/SigUp%20Screen.jpg" width="250" height="450" name="SignUp Screen">
 
 ## Dashboard Screen (Search news by category)
-<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Dashboard%201%20Screen.jpg" width="300" height="450" name="Screen one">
-<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Dashboard%202%20Screen.jpg" width="300" height="450" name="Screen two">
-<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Dashboard%203%20Screen.jpg" width="300" height="450" name="Screen three">
+<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Dashboard%201%20Screen.jpg" width="250" height="450" name="Screen one">
+<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Dashboard%202%20Screen.jpg" width="250" height="450" name="Screen two">
+<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Dashboard%203%20Screen.jpg" width="250" height="450" name="Screen three">
 
 ## Setting Screen
-<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Setting%20draw.jpg" width="300" height="450" name="Setting">
+<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Setting%20draw.jpg" width="250" height="450" name="Setting">
 
 ## Bookmarks Screen
-<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Bookmarks%20Screen.jpg" width="300" height="450" name="Bookmarks">
+<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Bookmarks%20Screen.jpg" width="250" height="450" name="Bookmarks">
 
 ## News Presenter Screen
-<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/News%20Prensenter%20Screen.jpg" width="300" height="450" name="News Presenter">
+<img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/News%20Prensenter%20Screen.jpg" width="250" height="450" name="News Presenter">
 
 
 
