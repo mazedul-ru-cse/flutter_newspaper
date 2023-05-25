@@ -1,16 +1,24 @@
-# flutter_newspaper
+# Flutter Newspaper Portal Mobile App
+It is a online based News Portal Mobile Application 
 
-A new Flutter project.
+# Package names
+  - get: ^4.6.5 for statement management
+  - firebase_auth: ^4.6.1 for user authentication
+  - simple_fontellico_progress_dialog: ^0.3.0 for showing progress indicator 
+  - intl: ^0.18.1 for get formatted date & time 
+  - google_fonts: ^4.0.4 for font
+  - webview_flutter: ^4.2.1 for news representation
+  - firebase_database: ^10.2.1 for for bookmarks add and delete
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Author
+* Name : M A Mazedul Islam
+* Senior Mobile App Developer at iHelpBD, Dhanmondi 27, Dhaka
+* Email : mazedulislam4970@gmail.com
+* Phone : +8801770-554970
+* LinkedIn : https://www.linkedin.com/in/mazedul70/
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Coding Convention
+- All Class, Method, property, variables function names should be camelCased.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
