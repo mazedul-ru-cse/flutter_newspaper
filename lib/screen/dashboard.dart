@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_newspaper/controller/news_controller.dart';
 import 'package:flutter_newspaper/database/database_handler.dart';
-import 'package:flutter_newspaper/screen/news_presenter.dart';
 import 'package:flutter_newspaper/widget/settings.dart';
 import 'package:flutter_newspaper/widget/widget_components.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../data/constant_data.dart';
+import 'news_presenter.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -104,11 +103,8 @@ class _DashboardState extends State<Dashboard> {
                     itemBuilder: (context,index){
 
                       return GestureDetector(
-                        onTap: (){
+                        onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>NewsPresenter(newsUrl: newsController.news[index].url.toString()))),
 
-                          //Navigator.push(context, MaterialPageRoute(builder: (context)=>NewsPresenter(newsUrl: newsController.news[index].url.toString())));
-                          DatabaseHandler().addBookmark(newsController.news[index]);
-                          },
                         child: Card(
                           margin: const EdgeInsets.only(top: 2),
                           elevation: 0,
@@ -125,10 +121,11 @@ class _DashboardState extends State<Dashboard> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(newsController.news[index].author.toString(),style: GoogleFonts.abel(fontSize: 10)),
-                                Text(newsController.news[index].publishedAt.toString(),style: GoogleFonts.abel(fontSize: 10)),
+                                Text(newsController.news[index].author.toString(),style: GoogleFonts.abel(fontSize: 12)),
+                                Text(newsController.news[index].publishedAt.toString(),style: GoogleFonts.abel(fontSize: 12)),
                               ],
                             ),
+                            trailing: IconButton(onPressed: ()=>DatabaseHandler().addBookmark(context, newsController.news[index]), icon: Icon(Icons.star,size: 20)),
                           ),
                         ),
                       );

@@ -16,7 +16,7 @@ class WidgetComponents {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        Text("Top News",style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.bold,wordSpacing: 2)),
+        Text("Online News",style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.bold,wordSpacing: 2)),
         Text(date,style: GoogleFonts.abel(fontSize: 15),),
       ],
     );

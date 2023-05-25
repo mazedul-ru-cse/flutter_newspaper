@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_newspaper/progress/progress_indicator.dart';
+import 'package:flutter_newspaper/screen/dashboard.dart';
 import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 
 import '../database/database_handler.dart';
@@ -241,13 +242,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
       ).then((value) {
 
-        Navigator.pushReplacementNamed(context, "dashboard");
+
+        try {
+          progressIndicator.hideDialog();
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const Dashboard()));
+        }catch(e){
+          print("Exception : $e");
+        }
 
         //Store user name
         DatabaseHandler().storeUserName(nameController.text);
         //Redirect to login screen
         //Hide progressbar
-        progressIndicator.hideDialog();
 
         log("<--- Account registration : $value");
       }

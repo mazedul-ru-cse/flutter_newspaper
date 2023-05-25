@@ -1,15 +1,32 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_newspaper/progress/progress_indicator.dart';
+import 'package:flutter_newspaper/database/database_handler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 
-class Setting extends StatelessWidget {
+class Setting extends StatefulWidget {
   const Setting({Key? key}) : super(key: key);
 
+  @override
+  State<Setting> createState() => _SettingState();
+}
+
+class _SettingState extends State<Setting> {
+
+
+  String userName = "";
+
+  @override
+  void initState() {
+
+    setUsername();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+
+    String? userEmail = FirebaseAuth.instance.currentUser?.email.toString();
+
     return SafeArea(
 
       child: Drawer(
@@ -21,12 +38,13 @@ class Setting extends StatelessWidget {
 
             UserAccountsDrawerHeader(
               currentAccountPicture: Image.asset("assets/images/user.png",),
-              accountName: Text("M A Mazedul Islan",style:GoogleFonts.acme(fontSize: 18)),
-              accountEmail: Text("mazedulislam4970@gmail.com",style:GoogleFonts.abel(fontSize: 15)),),
+              accountName: Text(userName,style:GoogleFonts.acme(fontSize: 18)),
+              accountEmail: Text(userEmail.toString(),style:GoogleFonts.abel(fontSize: 15)),),
 
             GestureDetector(
               onTap: (){
                 Navigator.pop(context);
+                Navigator.pushNamed(context, "bookmarks");
               },
               child: ListTile(
 
@@ -65,5 +83,15 @@ class Setting extends StatelessWidget {
       ),
 
     );
+  }
+
+  void setUsername() async {
+
+    String? data = await DatabaseHandler().getUserName();
+    setState(() {
+      userName = data!;
+    });
+
+
   }
 }
