@@ -10,7 +10,7 @@ It's an online based News Portal Mobile Application
   - macOS
 
 # Package names
-  - get: ^4.6.5 for statement management
+  - get: ^4.6.5 for state management
   - firebase_auth: ^4.6.1 for user authentication
   - simple_fontellico_progress_dialog: ^0.3.0 for showing progress indicator 
   - intl: ^0.18.1 for get formatted date & time 
