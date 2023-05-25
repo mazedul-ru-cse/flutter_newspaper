@@ -56,5 +56,5 @@ It's an online based News Portal Mobile Application
 - All Class, Method, property, variables function names should be camelCased.
 
 # Copyright © 2023 
-## M A Mazedul Islam
+## <a href="https://www.linkedin.com/in/mazedul70/">M A Mazedul Islam</a>
 
