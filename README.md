@@ -1,5 +1,13 @@
 # Flutter Newspaper Portal Mobile App
-It is a online based News Portal Mobile Application 
+It's an online based News Portal Mobile Application 
+
+# Supported platform 
+  - Android
+  - iOS
+  - Windows
+  - Linux
+  - Web
+  - macOS
 
 # Package names
   - get: ^4.6.5 for statement management
