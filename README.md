@@ -47,6 +47,6 @@ It is a online based News Portal Mobile Application
 ## Coding Convention
 - All Class, Method, property, variables function names should be camelCased.
 
-## Copyright © 2023 
-# M A Mazedul Islam
+# Copyright © 2023 
+## M A Mazedul Islam
 
