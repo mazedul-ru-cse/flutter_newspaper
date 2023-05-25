@@ -2,7 +2,7 @@
     package="com.example.flutter_newspaper">
 
     <application
-        android:label="flutter_newspaper"
+        android:label="Newspaper"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
