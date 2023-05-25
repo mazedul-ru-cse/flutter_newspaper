@@ -13,9 +13,9 @@ It is a online based News Portal Mobile Application
 
 <details>
   <summary>Screenshots</summary>
-  <img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Login%20Screen.jpg" name="Login Screen">
-  <img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/SigUp%20Screen.jpg" name="SignUp Screen">
-  <img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Dashboard%201%20Screen.jpg" name="News Title by category">
+  <img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Login%20Screen.jpg" width="300" height="450" name="Login Screen">
+  <img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/SigUp%20Screen.jpg" width="300" height="450" name="SignUp Screen">
+  <img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Dashboard%201%20Screen.jpg" width="300" height="450" name="News Title by category">
 </details>
 
 # Author
