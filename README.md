@@ -10,7 +10,8 @@ It is a online based News Portal Mobile Application
   - webview_flutter: ^4.2.1 for news representation
   - firebase_database: ^10.2.1 for for bookmarks add and delete
 
-
+# News APIs
+  News API link : https://newsapi.org
 
 ## Login Screen
   <img src="https://github.com/mazedul-ru-cse/flutter_newspaper/blob/master/screenshots/Login%20Screen.jpg" width="250" height="450" name="Login Screen">
@@ -39,8 +40,13 @@ It is a online based News Portal Mobile Application
 * Senior Mobile App Developer at iHelpBD, Dhanmondi 27, Dhaka
 * Email : mazedulislam4970@gmail.com
 * Phone : +8801770-554970
+* WhatsApp : +8801770-554970
 * LinkedIn : https://www.linkedin.com/in/mazedul70/
+* Facebook : https://fb.com/mamazedulislam70
 
 ## Coding Convention
 - All Class, Method, property, variables function names should be camelCased.
+
+## Copyright © 2023 
+# M A Mazedul Islam
 
