@@ -46,7 +46,7 @@ It's an online based News Portal Mobile Application
 # Author
 * Name : M A Mazedul Islam
 * Senior Mobile App Developer at iHelpBD, Dhanmondi 27, Dhaka
-* Email : mazedulislam4970@gmail.com
+* Email : <a href="mailto:mazedulislam4970@gmail.com">mazedulislam4970@gmail.com</a>
 * Phone : +8801770-554970
 * WhatsApp : +8801770-554970
 * LinkedIn : https://www.linkedin.com/in/mazedul70/
