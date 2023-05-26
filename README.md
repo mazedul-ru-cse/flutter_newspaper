@@ -1,4 +1,4 @@
-# Flutter Newspaper Portal Mobile App
+# Flutter Newspaper Mobile App
 It's an online based News Portal Mobile Application 
 
 # Supported platform 
